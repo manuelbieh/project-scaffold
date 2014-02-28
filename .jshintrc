@@ -1,0 +1,51 @@
+{
+    "laxcomma"          : true,
+    "trailing"          : true,
+    "latedef"           : true,
+    "debug"             : true,
+    "curly"             : false,
+    "strict"            : false,
+    "white"             : false,
+    "forin"             : true,
+    "noarg"             : true,
+    "noempty"           : true,
+    "eqeqeq"            : true,
+    "bitwise"           : false,
+    "undef"             : true,
+    "browser"           : true,
+    "indent"            : 4,
+    "maxerr"            : 64,
+    "newcap"            : false,
+    "expr"              : true,
+
+    "browser"           : true,
+    "node"              : true,
+    "devel"             : true,
+
+    "predef": {
+        "jQuery"        : true,
+        "$"             : true,
+        "_"             : true,
+        "dust"          : true,
+        "I18n"          : true,
+        "Backbone"      : true,
+        "_e"            : true,
+        "_E"            : true,
+        "escape"        : true,
+        "unescape"      : true,
+        "angular"       : true,
+        "Modernizr"     : true,
+        "IScroll"       : true,
+        "TweenMax"      : true,
+
+        // jasmine specs
+        "describe"      : true,
+        "beforeEach"    : true,
+        "afterEach"     : true,
+        "expect"        : true,
+        "it"            : true,
+        "sinon"         : true,
+        "spyOn"         : true
+    }
+}
+/* vim:syntax=javascript */
