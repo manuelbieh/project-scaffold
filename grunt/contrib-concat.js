@@ -8,7 +8,8 @@ module.exports = function(grunt) {
 			files: {
 				'<%= config.dirs.dist %>/htdocs/css/styles.css': [
 					'<%= config.dirs.src %>/components/normalize.css/*.css',
-					'<%= config.dirs.dist %>/htdocs/css/custom.css'
+					//'<%= config.dirs.dist %>/htdocs/css/custom.css'
+					'.tmp/css/custom.css'
 				]
 			}
 		}

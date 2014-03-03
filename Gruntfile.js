@@ -30,6 +30,7 @@ module.exports = function(grunt) {
 			'clean:pre',
 			'copy',
 			'useminPrepare',
+			'bowerInstall',
 			'compass:prod',
 			'concat',
 			'uglify',

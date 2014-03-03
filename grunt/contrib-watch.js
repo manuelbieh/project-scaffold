@@ -17,6 +17,16 @@ module.exports = function(grunt) {
 
 		},
 
+		bower: {
+			options: {
+				livereload: true
+			},
+			files: [
+				'<%= config.dirs.src %>/components/*'
+			],
+			tasks: ['bowerInstall']
+		},
+
 		livereload: {
 
 			options: {
