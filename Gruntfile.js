@@ -3,6 +3,8 @@ module.exports = function(grunt) {
 
 	require('load-grunt-tasks')(grunt);
 
+    require('time-grunt')(grunt);
+
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json')
 	});
@@ -38,5 +40,23 @@ module.exports = function(grunt) {
 			'clean:post'
 		]
 	);
+
+    grunt.registerTask('serve', 
+		'Starts a static webserver with livereload',
+		function (target) {
+
+			if (target === 'dist') {
+				return grunt.task.run(['build', 'connect:dist:keepalive']);
+			}
+
+			grunt.task.run([
+				'build',
+				'connect:livereload',
+				'watch'
+			]);
+
+		}
+
+    );
 
 };

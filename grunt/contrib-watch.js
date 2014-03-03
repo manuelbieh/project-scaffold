@@ -1,16 +1,36 @@
 module.exports = function(grunt) {
 
 	grunt.config('watch', {
+
 		prod: {
+
+			options: {
+				livereload: true
+			},
+
 			files: [
 				'<%= compass.options.sassDir %>/**/*.scss',
-				'<%= config.dirs.src %>/**/*.html',
-				'<%= config.dirs.src %>/**/.js',
-				'<%= config.dirs.src %>/**/.json',
-				'<%= config.dirs.src %>/**/.css'
+				'<%= config.dirs.src %>/**/*.{html,js,json,css,scss,less}'
 			],
+
 			tasks: ['build']
+
+		},
+
+		livereload: {
+
+			options: {
+				livereload: '<%= connect.options.livereload %>'
+			},
+
+			files: [
+				'<%= config.dirs.src %>/{,*/}*.html',
+				'.tmp/styles/{,*/}*.css',
+				'<%= config.dirs.src %>/images/{,*/}*.{gif,jpeg,jpg,png,svg,webp}'
+			]
+
 		}
+
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
