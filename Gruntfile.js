@@ -22,7 +22,23 @@ module.exports = function(grunt) {
 		['jshint', 'clean', 'jade:prod', 'requirejs:prod', 'stylus:prod']
 	);
 
-	grunt.registerTask('default', ['build', 'watch']);
+    grunt.registerTask('serve', 
+		'Starts a static webserver with livereload',
+		function (target) {
+
+			if (target === 'dist') {
+				return grunt.task.run(['build', 'connect:dist:keepalive']);
+			}
+
+			grunt.task.run([
+				'build',
+				'connect:livereload',
+				'watch'
+			]);
+
+		}
+
+    );
 
 	grunt.registerTask('build',
 		'Build site files for testing or deployment.',
@@ -42,22 +58,6 @@ module.exports = function(grunt) {
 		]
 	);
 
-    grunt.registerTask('serve', 
-		'Starts a static webserver with livereload',
-		function (target) {
-
-			if (target === 'dist') {
-				return grunt.task.run(['build', 'connect:dist:keepalive']);
-			}
-
-			grunt.task.run([
-				'build',
-				'connect:livereload',
-				'watch'
-			]);
-
-		}
-
-    );
+	grunt.registerTask('default', ['build', 'watch']);
 
 };

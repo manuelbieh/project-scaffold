@@ -5,14 +5,8 @@ module.exports = function(grunt) {
 			src: [
 			  'src/**/*.html',
 			],
-			exclude: [/\.css/, /jquery/], // jquery is loaded via cdn
+			exclude: [/jquery\.js/], // jquery is loaded via cdn
 			ignorePath: 'src/',
-		},
-		css: {
-			src: [
-			'src/**/*.html',
-			],
-			exclude: [/\.js/]
 		}
 	});
 
