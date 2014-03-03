@@ -34,6 +34,7 @@
     "grunt-text-replace": "~0.3.11",
     "grunt-contrib-htmlmin": "~0.2.0",
     "grunt-rev": "~0.1.0",
-    "grunt-contrib-cssmin": "~0.9.0"
+    "grunt-contrib-cssmin": "~0.9.0",
+    "bower": "~1.2.8"
   }
 }
