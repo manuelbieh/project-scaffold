@@ -1,38 +1,19 @@
 module.exports = function(grunt) {
 
-	grunt.config('compass', {
-
+	grunt.config('concat', {
 		options: {
-			sassDir: '<%= config.dirs.src %>/scss',
-			cssDir: '<%= config.dirs.dist %>/htdocs/css',
-			generatedImagesDir: '.tmp/images/generated',
-			imagesDir: '<% config.dirs.src %>/images',
-			javascriptsDir: '<% config.dirs.src %>/scripts',
-			fontsDir: '<% config.dirs.src %>/styles/fonts',
-			httpImagesPath: '../images',
-			httpGeneratedImagesPath: '../images/generated',
-			httpFontsPath: '/styles/fonts',
-			relativeAssets: false,
-			assetCacheBuster: false
+			stripBanners: false,
 		},
-
 		prod: {
-			options: {
-				generatedImagesDir: '<%= config.dirs.dist %>/images/generated',
-				debugInfo: false,
-				outputStyle: 'compressed'
-			}
-		},
-
-		dev: {
-			options: {
-				debugInfo: true,
-				outputStyle: 'expanded'
+			files: {
+				'<%= config.dirs.dist %>/htdocs/css/styles.css': [
+					'<%= config.dirs.src %>/components/normalize.css/*.css',
+					'<%= config.dirs.dist %>/htdocs/css/custom.css'
+				]
 			}
 		}
-
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-compass');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 
 }

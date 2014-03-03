@@ -2,12 +2,14 @@ module.exports = function(grunt) {
 
 	grunt.config('watch', {
 		prod: {
-			files: '<%= compass.options.sassDir %>/**/*.scss',
-			tasks: ['prod']
-		},
-		dev: {
-			files: '<%= compass.options.sassDir %>/**/*.scss',
-			tasks: ['dev']
+			files: [
+				'<%= compass.options.sassDir %>/**/*.scss',
+				'<%= config.dirs.src %>/**/*.html',
+				'<%= config.dirs.src %>/**/.js',
+				'<%= config.dirs.src %>/**/.json',
+				'<%= config.dirs.src %>/**/.css'
+			],
+			tasks: ['build']
 		}
 	});
 

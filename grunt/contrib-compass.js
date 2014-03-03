@@ -8,19 +8,19 @@ module.exports = function(grunt) {
 			generatedImagesDir: '.tmp/images/generated',
 			imagesDir: '<% config.dirs.src %>/images',
 			javascriptsDir: '<% config.dirs.src %>/scripts',
-			fontsDir: '<% config.dirs.src %>/styles/fonts',
+			fontsDir: '<% config.dirs.src %>/fonts',
 			httpImagesPath: '../images',
 			httpGeneratedImagesPath: '../images/generated',
-			httpFontsPath: '/styles/fonts',
+			httpFontsPath: '/fonts',
 			relativeAssets: false,
 			assetCacheBuster: false
 		},
 
 		prod: {
 			options: {
-				generatedImagesDir: '<%= config.dirs.dist %>/images/generated',
 				debugInfo: false,
-				outputStyle: 'compressed'
+				//outputStyle: 'compressed'
+				outputStyle: 'expanded'
 			}
 		},
 

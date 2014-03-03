@@ -9,7 +9,9 @@ module.exports = function(grunt) {
 			'<%= config.dirs.dist %>/**/*.sass',
 			'<%= config.dirs.dist %>/**/*.coffee',
 			'<%= config.dirs.dist %>/**/*.styl',
-			'<%= config.dirs.dist %>/**/*.less'
+			'<%= config.dirs.dist %>/**/*.less',
+			'<%= config.dirs.dist %>/htdocs/css/!(*.styles).css',
+			'.tmp'
 		]
 	});
 

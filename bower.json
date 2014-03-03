@@ -1,0 +1,21 @@
+{
+  "name": "New Project",
+  "version": "0.0.0",
+  "homepage": "https://github.com/manuelbieh/project-scaffold",
+  "authors": [
+    "Manuel Bieh <github@manuelbieh.de>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "src/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.10"
+  }
+}

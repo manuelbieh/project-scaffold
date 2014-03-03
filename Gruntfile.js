@@ -20,13 +20,23 @@ module.exports = function(grunt) {
 		['jshint', 'clean', 'jade:prod', 'requirejs:prod', 'stylus:prod']
 	);
 
-	grunt.registerTask('prod',
+	grunt.registerTask('default', ['build', 'watch']);
+
+	grunt.registerTask('build',
 		'Build site files for testing or deployment.',
-		['clean:pre', 'compass:prod', 'autoprefixer', 'uglify:prod', 'clean:post']
+		[
+			'clean:pre',
+			'copy',
+			'useminPrepare',
+			'compass:prod',
+			'concat',
+			'uglify',
+			'cssmin',
+			'autoprefixer',
+			'rev',
+			'usemin',
+			'clean:post'
+		]
 	);
-
-	grunt.registerTask('ap', ['autoprefixer']);
-
-	grunt.registerTask('default', ['prod', 'watch:prod']);
 
 };

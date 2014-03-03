@@ -6,13 +6,15 @@ module.exports = function(grunt) {
 				expand: true,
 				dot: true,
 				cwd: '<%= config.dirs.src %>',
-				dest: '<%= config.dirs.dist %>',
+				dest: '<%= config.dirs.dist %>/htdocs',
 				src: [
+					'*.html',
 					'{,*/}*.{ico,png,txt,json}',
 					'.htaccess',
 					'images/{,*/}*.{webp,gif,GIF}',
-					'css/fonts/{,*/}*.*',
-					'js/vendor/*.js'
+					'fonts/{,*/}*.*',
+					//'js/vendor/*.js',
+					//'components/**/*'
 				]
 			}]
 		}

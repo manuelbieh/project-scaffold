@@ -8,13 +8,26 @@ module.exports = function(grunt) {
 			}			
 		},
 		"prod": {
+
 			options: {
 				preserveComments: 'some',
 			},
+
 			files: {
-				'<%= config.dirs.dist %>/htdocs/js/main.js': ['<%= config.dirs.src %>/js/*.js']
+			//	'<%= config.dirs.dist %>/htdocs/js/main.js': [
+			//		'<%= config.dirs.src %>/js/*.js'
+			//	],
+			//	'<%= config.dirs.dist %>/htdocs/js/vendor.js': [
+			//		'<%= config.dirs.src %>/components/jquery/jquery.js',
+			//		'<%= config.dirs.src %>/js/vendor/*.js'
+			//	]
+			//	'<%= config.dirs.dist %>/htdocs/js/main.min.js': [
+			//		'<%= config.dirs.dist %>/htdocs/js/main.js'
+			//	]
 			}
+
 		}
+
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-sass');
