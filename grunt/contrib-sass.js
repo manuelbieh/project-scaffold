@@ -3,15 +3,17 @@ module.exports = function(grunt) {
 	grunt.config('sass', {
 		"dev": {
 			"files": {
-				"htdocs/css/layout.css" : "src/scss/master.scss"
+				"htdocs/css/custom.css" : "src/scss/custom.scss"
 			},
 			"options": {
-				"lineNumbers": true
-			}
+				"lineNumbers": true,
+				"sourcemap": true
+			},
+			"compass": true
 		},
 		"prod": {
 			"files": {
-				"htdocs/css/layout.min.css" : "src/scss/master.scss"
+				"htdocs/css/custom.min.css" : "src/scss/custom.scss"
 			},
 			"options": {
 				"style": "compressed"

@@ -11,34 +11,35 @@ module.exports = function(grunt) {
 
 	grunt.loadTasks('grunt');
 
-	// Default task.
-	grunt.registerTask('dev',
-		'Start a live-reloading dev webserver on localhost.',
-		['clean', 'compass:dev']
-	);
-
-	grunt.registerTask('build',
-		'Build site files for testing or deployment.',
-		['jshint', 'clean', 'jade:prod', 'requirejs:prod', 'stylus:prod']
-	);
-
     grunt.registerTask('serve', 
 		'Starts a static webserver with livereload',
 		function (target) {
 
+			var tasks = [];
+
 			if (target === 'dist') {
 				return grunt.task.run(['build', 'connect:dist:keepalive']);
+			} else if(target === 'dev') {
+				tasks = ['dev', 'connect:livereload', 'watch'];
+			} else {
+				tasks = ['build', 'connect:livereload', 'watch'];
 			}
 
-			grunt.task.run([
-				'build',
-				'connect:livereload',
-				'watch'
-			]);
+			grunt.task.run(tasks);
 
 		}
 
     );
+
+	grunt.registerTask('dev',
+		'Build site files for testing or deployment.',
+		[
+			'clean:pre',
+			'copy:dev',
+			'bowerInstall',
+			'compass:dev',
+		]
+	);
 
 	grunt.registerTask('build',
 		'Build site files for testing or deployment.',

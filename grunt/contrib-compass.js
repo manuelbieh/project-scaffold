@@ -21,14 +21,17 @@ module.exports = function(grunt) {
 				debugInfo: false,
 				//outputStyle: 'compressed'
 				outputStyle: 'expanded'
-			}
+			},
+			//sourcemap: true
 		},
 
 		dev: {
 			options: {
 				debugInfo: true,
 				outputStyle: 'expanded'
-			}
+			},
+			raw: "sass_options = {:sourcemap => true}",
+			sourcemap: true
 		}
 
 	});
