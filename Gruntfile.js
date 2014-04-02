@@ -1,6 +1,7 @@
 /*global module:false*/
 module.exports = function(grunt) {
 
+
 	require('load-grunt-tasks')(grunt);
 
     require('time-grunt')(grunt);
@@ -9,6 +10,7 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json')
 	});
 
+	grunt.loadTasks('grunt/_config.js');
 	grunt.loadTasks('grunt');
 
     grunt.registerTask('serve', 
@@ -32,17 +34,26 @@ module.exports = function(grunt) {
     );
 
 	grunt.registerTask('dev',
-		'Build site files for testing or deployment.',
+		'Quickly build site files for development.',
 		[
-			'clean:pre',
+			'clean:dev',
 			'copy:dev',
-			'bowerInstall',
+			'useminPrepare',
+			//'bowerInstall',
 			'compass:dev',
+			'concat',
+			'uglify',
+			'cssmin',
+			'autoprefixer',
+			'rev',
+			'usemin',
+			'newer:imagemin',
+			//'clean:post'
 		]
 	);
 
 	grunt.registerTask('build',
-		'Build site files for testing or deployment.',
+		'Build site files for deployment.',
 		[
 			'clean:pre',
 			'copy',
@@ -55,10 +66,12 @@ module.exports = function(grunt) {
 			'autoprefixer',
 			'rev',
 			'usemin',
+			'imagemin',
 			'clean:post'
 		]
 	);
 
-	grunt.registerTask('default', ['build', 'watch']);
+	grunt.registerTask('default', ['serve:dev']);
+	//grunt.registerTask('default', ['build', 'watch']);
 
 };

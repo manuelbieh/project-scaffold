@@ -10,6 +10,6 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.loadNpmTasks('grunt-bower-install');
+	//grunt.loadNpmTasks('grunt-bower-install');
 
 }

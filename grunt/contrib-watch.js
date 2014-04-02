@@ -10,10 +10,11 @@ module.exports = function(grunt) {
 
 			files: [
 				'<%= compass.options.sassDir %>/**/*.scss',
-				'<%= config.dirs.src %>/**/*.{html,js,json,css,scss,less}'
+				'<%= config.dirs.src %>/**/*.{html,js,json,css,scss,less}',
+				'!<%= config.dirs.src %>/components/**/*.{html,js,json,css,scss,less}'
 			],
 
-			tasks: ['build']
+			tasks: ['dev']
 
 		},
 
@@ -22,9 +23,23 @@ module.exports = function(grunt) {
 				livereload: true
 			},
 			files: [
-				'<%= config.dirs.src %>/components/*'
+				'<%= config.dirs.src %>/components/**/*'
 			],
 			tasks: ['bowerInstall']
+		},
+
+		imagemin: {
+
+			options: {
+				livereload: true
+			},
+
+			files: [
+				'<%= config.dirs.src %>/img/**/*'
+			],
+
+			tasks: ['newer:imagemin']
+
 		},
 
 		livereload: {
@@ -35,11 +50,10 @@ module.exports = function(grunt) {
 
 			files: [
 				'<%= config.dirs.src %>/{,*/}*.html',
-				'<%= config.dirs.dist %>/{,*/}*.css',
-				'<%= config.dirs.dist %>/{,*/}*.js',
-				'<%= config.dirs.dist %>/{,*/}*.html',
+				'<%= config.dirs.src %>/{,*/}*.{css,scss,sass,less,styl}',
+				'<%= config.dirs.src %>/{,*/}*.js',
 				'.tmp/styles/{,*/}*.css',
-				'<%= config.dirs.src %>/images/{,*/}*.{gif,jpeg,jpg,png,svg,webp}'
+				'<%= config.dirs.src %>/img/{,*/}*.{gif,jpeg,jpg,png,svg,webp}'
 			]
 
 		}

@@ -1,6 +1,9 @@
 module.exports = function(grunt) {
 
-	grunt.config('cssmin', {
+
+	// Using useminPrepare generated cssmin config
+
+	//grunt.config('cssmin', {
 	//	prod: {
 	//		files: {
 	//			'<%= config.dirs.dist %>/htdocs/css/styles.css': [
@@ -9,8 +12,8 @@ module.exports = function(grunt) {
 	//			]
 	//		}
 	//	}
-	});
+	//});
 
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	//grunt.loadNpmTasks('grunt-contrib-cssmin');
 
 }

@@ -6,13 +6,13 @@ module.exports = function(grunt) {
 				src: [
 					'<%= config.dirs.dist %>/htdocs/js/{,*/}*.js',
 					'<%= config.dirs.dist %>/htdocs/css/{,*/}*.css',
-					'<%= config.dirs.dist %>/htdocs/images/{,*/}*.{gif,jpeg,jpg,png,webp}',
-					'<%= config.dirs.dist %>/htdocs/fonts/{,*/}*.*'
+					//'<%= config.dirs.dist %>/htdocs/img/{,*/}*.{gif,jpeg,jpg,png,webp}',
+					//'<%= config.dirs.dist %>/htdocs/fonts/{,*/}*.*'
 				]
 			}
 		}
 	});
 
-	grunt.loadNpmTasks('grunt-rev');
+	//grunt.loadNpmTasks('grunt-rev');
 
 }

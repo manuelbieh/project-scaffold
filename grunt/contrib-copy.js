@@ -11,8 +11,10 @@ module.exports = function(grunt) {
 					'*.html',
 					'{,*/}*.{ico,png,txt,json}',
 					'.htaccess',
-					'images/{,*/}*.{webp,gif,GIF}',
+					'img/{,*/}*.{webp,gif,GIF,jpeg,jpg}',
 					'fonts/{,*/}*.*',
+					'js/**/*.js',
+					'css/**/*.css',
 					//'js/vendor/*.js',
 					//'components/**/*'
 				]
@@ -28,10 +30,11 @@ module.exports = function(grunt) {
 					'*.html',
 					'{,*/}*.{ico,png,txt,json}',
 					'.htaccess',
-					'images/{,*/}*.{webp,gif,GIF}',
+					'img/{,*/}*.{webp,gif,GIF,jpeg,jpg}',
 					'fonts/{,*/}*.*',
 					'js/**/*.js',
-					'components/**/*'
+					'css/**/*.css',
+				//	'components/**/*'
 				]
 			}]
 		}
