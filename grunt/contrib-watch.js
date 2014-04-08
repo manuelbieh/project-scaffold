@@ -5,7 +5,8 @@ module.exports = function(grunt) {
 		prod: {
 
 			options: {
-				livereload: true
+				//livereload: true,
+				livereload: '<%= connect.options.livereload %>'
 			},
 
 			files: [
@@ -19,19 +20,26 @@ module.exports = function(grunt) {
 		},
 
 		bower: {
+
 			options: {
-				livereload: true
+				//livereload: true,
+				livereload: '<%= connect.options.livereload %>',
+				event: ['added', 'deleted', 'changed']
 			},
+
 			files: [
 				'<%= config.dirs.src %>/components/**/*'
 			],
+
 			tasks: ['bowerInstall']
+
 		},
 
 		imagemin: {
 
 			options: {
-				livereload: true
+				//livereload: true,
+				livereload: '<%= connect.options.livereload %>'
 			},
 
 			files: [
@@ -60,6 +68,6 @@ module.exports = function(grunt) {
 
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-watch');
+	//grunt.loadNpmTasks('grunt-contrib-watch');
 
 }

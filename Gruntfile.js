@@ -1,16 +1,16 @@
 /*global module:false*/
 module.exports = function(grunt) {
 
-
 	require('load-grunt-tasks')(grunt);
 
     require('time-grunt')(grunt);
 
 	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json')
+		pkg: grunt.file.readJSON('package.json'),
+		config: grunt.file.readJSON('grunt/_config.json')
 	});
 
-	grunt.loadTasks('grunt/_config.js');
+	//grunt.loadTasks('grunt/_config.js');
 	grunt.loadTasks('grunt');
 
     grunt.registerTask('serve', 
@@ -45,6 +45,7 @@ module.exports = function(grunt) {
 			'uglify',
 			'cssmin',
 			'autoprefixer',
+			'compress:gzip',
 			'rev',
 			'usemin',
 			'newer:imagemin',
@@ -67,6 +68,7 @@ module.exports = function(grunt) {
 			'rev',
 			'usemin',
 			'imagemin',
+			'svgmin',
 			'clean:post'
 		]
 	);

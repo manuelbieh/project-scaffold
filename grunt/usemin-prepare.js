@@ -7,6 +7,6 @@ module.exports = function(grunt) {
 		html: '<%= config.dirs.src %>/index.html'
 	});
 
-	grunt.loadNpmTasks('grunt-usemin');
+	//grunt.loadNpmTasks('grunt-usemin');
 
 }

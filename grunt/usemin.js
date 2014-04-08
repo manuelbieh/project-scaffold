@@ -6,6 +6,6 @@ module.exports = function(grunt) {
 		css: ['<%= config.dirs.dist %>/css/{,*/}*.css']
 	});
 
-	grunt.loadNpmTasks('grunt-usemin');
+	//grunt.loadNpmTasks('grunt-usemin');
 
 }
