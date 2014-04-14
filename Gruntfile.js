@@ -1,9 +1,9 @@
 /*global module:false*/
 module.exports = function(grunt) {
 
-	require('load-grunt-tasks')(grunt);
-
     require('time-grunt')(grunt);
+
+	require('load-grunt-tasks')(grunt);
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -22,9 +22,9 @@ module.exports = function(grunt) {
 			if (target === 'dist') {
 				return grunt.task.run(['build', 'connect:dist:keepalive']);
 			} else if(target === 'dev') {
-				tasks = ['dev', 'connect:livereload', 'watch'];
+				tasks = ['dev', 'configureRewriteRules', 'connect:livereload', 'watch'];
 			} else {
-				tasks = ['build', 'connect:livereload', 'watch'];
+				tasks = ['build', 'configureRewriteRules', 'connect:livereload', 'watch'];
 			}
 
 			grunt.task.run(tasks);
@@ -45,7 +45,6 @@ module.exports = function(grunt) {
 			'uglify',
 			'cssmin',
 			'autoprefixer',
-			'compress:gzip',
 			'rev',
 			'usemin',
 			'newer:imagemin',
@@ -65,6 +64,7 @@ module.exports = function(grunt) {
 			'uglify',
 			'cssmin',
 			'autoprefixer',
+			'compress:gzip',
 			'rev',
 			'usemin',
 			'imagemin',

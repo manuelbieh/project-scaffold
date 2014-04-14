@@ -2,7 +2,25 @@ module.exports = function(grunt) {
 
 	grunt.config('watch', {
 
-		prod: {
+
+//		prod: {
+
+//			options: {
+				//livereload: true,
+//				livereload: '<%= connect.options.livereload %>'
+//			},
+
+//			files: [
+//				'<%= compass.options.sassDir %>/**/*.scss',
+//				'<%= config.dirs.src %>/**/*.{html,js,json,css,scss,less}',
+//				'!<%= config.dirs.src %>/components/**/*.{html,js,json,css,scss,less}'
+//			],
+
+//			tasks: ['dev']
+
+//		},
+
+		htmlcssjs: {
 
 			options: {
 				//livereload: true,
@@ -10,12 +28,43 @@ module.exports = function(grunt) {
 			},
 
 			files: [
-				'<%= compass.options.sassDir %>/**/*.scss',
-				'<%= config.dirs.src %>/**/*.{html,js,json,css,scss,less}',
-				'!<%= config.dirs.src %>/components/**/*.{html,js,json,css,scss,less}'
+				'<%= config.dirs.src %>/**/*.{html,js,json,css}',
 			],
 
-			tasks: ['dev']
+			tasks: [
+				'clean:dev', 
+				'copy:dev', 
+				'useminPrepare', 
+				'concat', 
+				'uglify', 
+				'cssmin', 
+				'autoprefixer', 
+				'rev', 
+				'usemin'
+			]
+
+		},
+
+		compass: {
+
+			options: {
+				//livereload: true,
+				livereload: '<%= connect.options.livereload %>'
+			},
+
+			files: [
+				'<%= compass.options.sassDir %>/**/*.scss'
+			],
+
+			tasks: [
+				'useminPrepare', 
+				'compass:dev', 
+				'concat', 
+				'cssmin', 
+				'autoprefixer', 
+				'rev', 
+				'usemin'
+			]
 
 		},
 
@@ -24,7 +73,7 @@ module.exports = function(grunt) {
 			options: {
 				//livereload: true,
 				livereload: '<%= connect.options.livereload %>',
-				event: ['added', 'deleted', 'changed']
+				event: ['added', 'deleted'/*, 'changed'*/]
 			},
 
 			files: [
