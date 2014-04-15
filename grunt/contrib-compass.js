@@ -21,6 +21,7 @@ module.exports = function(grunt) {
 				debugInfo: false,
 				//outputStyle: 'compressed'
 				outputStyle: 'expanded'
+				environment: 'production'
 			},
 			//sourcemap: true
 		},
@@ -28,7 +29,8 @@ module.exports = function(grunt) {
 		dev: {
 			options: {
 				debugInfo: true,
-				outputStyle: 'expanded'
+				outputStyle: 'expanded',
+				environment: 'development'
 			},
 			raw: "sass_options = {:sourcemap => true}",
 			sourcemap: true
