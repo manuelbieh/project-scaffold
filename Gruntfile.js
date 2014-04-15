@@ -1,7 +1,7 @@
 /*global module:false*/
 module.exports = function(grunt) {
 
-    require('time-grunt')(grunt);
+	require('time-grunt')(grunt);
 
 	require('load-grunt-tasks')(grunt);
 
@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 	//grunt.loadTasks('grunt/_config.js');
 	grunt.loadTasks('grunt');
 
-    grunt.registerTask('serve', 
+	grunt.registerTask('serve', 
 		'Starts a static webserver with livereload',
 		function (target) {
 
@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 
 		}
 
-    );
+	);
 
 	grunt.registerTask('dev',
 		'Quickly build site files for development.',
